@@ -1,0 +1,87 @@
+<!-- dashboard.html (updated) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="User Dashboard - Secure Account Management">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li><a href="#dashboardSection" onclick="showSection('dashboardSection'); return false;">Dashboard</a></li>
+                <li><a href="#settingsSection" onclick="showSection('settingsSection'); return false;">Settings</a></li>
+                <li><a href="#" onclick="logout();">Logout</a></li> <!-- Updated to call logout function -->
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="dashboard" id="dashboardSection" data-section="dashboard">
+            <div class="welcome-header" aria-labelledby="welcomeMessage">
+                <h2 id="welcomeMessage"></h2>
+                <p>You've successfully logged in to your secure account.</p>
+            </div>
+            
+            <div class="user-card" aria-labelledby="userProfile">
+                <h3 id="userProfile" class="sr-only">User Profile</h3>
+                <div class="user-info">
+                    <div class="avatar" id="userAvatar" role="img" aria-label="User Avatar"></div>
+                    <div class="user-details">
+                        <h3 id="userName"></h3>
+                        <p>Member since: <span id="joinDate"></span></p>
+                    </div>
+                </div>
+                
+                <div class="user-stats">
+                    <div class="stat-box">
+                        <h4>Account Status</h4>
+                        <div class="stat-value">Active</div>
+                    </div>
+                    <div class="stat-box">
+                        <h4>Security Level</h4>
+                        <div class="stat-value">High</div>
+                    </div>
+                    <div class="stat-box">
+                        <h4>Last Login</h4>
+                        <div class="stat-value" id="lastLogin"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="additional-info" aria-labelledby="additionalInfo">
+                <h3 id="additionalInfo">Quick Actions</h3>
+                <ul>
+                    <li><button onclick="updateProfile()">Update Profile</button></li>
+                    <li><button onclick="changePassword()">Change Password</button></li>
+                    <li><button onclick="viewActivity()">View Recent Activity</button></li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="settings" id="settingsSection" data-section="settings" style="display: none;">
+            <h2>Settings</h2>
+            <div class="setting-item">
+                <label for="darkModeToggle">Dark Mode</label>
+                <input type="checkbox" id="darkModeToggle" onclick="toggleDarkMode(this.checked)">
+            </div>
+            <!-- Added more settings for improvement -->
+            <div class="setting-item">
+                <label for="emailNotifications">Email Notifications</label>
+                <input type="checkbox" id="emailNotifications">
+            </div>
+            <div class="setting-item">
+                <button onclick="saveSettings()">Save Settings</button>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Your Company. All rights reserved.</p>
+    </footer>
+</body>
+</html>
