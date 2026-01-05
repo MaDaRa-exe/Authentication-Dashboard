@@ -12,7 +12,7 @@ function getUserData() {
 
 function setUserData(data) {
     localStorage.setItem('userData', JSON.stringify(data));
-}
+
 
 // Function to populate the dashboard with user data
 function populateDashboard() {
