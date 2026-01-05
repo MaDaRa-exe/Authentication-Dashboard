@@ -1,5 +1,3 @@
-// script.js (updated for debugging and fixes)
-
 // Function to get current date/time string
 function getCurrentDateTime() {
     const now = new Date();
